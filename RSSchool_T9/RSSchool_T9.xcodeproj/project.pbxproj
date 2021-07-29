@@ -25,6 +25,14 @@
 		2BB9F30E26AF5FA900F43852 /* story-4-path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9F30D26AF5FA900F43852 /* story-4-path.swift */; };
 		2BB9F31026AF5FB300F43852 /* s4-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9F30F26AF5FB300F43852 /* s4-text.txt */; };
 		2BB9F31226AF5FBE00F43852 /* s4-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9F31126AF5FBE00F43852 /* s4-title.txt */; };
+		EDE3824626B18255005DBA59 /* RSCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3824526B18255005DBA59 /* RSCollectionVC.swift */; };
+		EDE3824B26B18558005DBA59 /* RSViewCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3824A26B18558005DBA59 /* RSViewCollectionCell.swift */; };
+		EDE3824E26B2AEF6005DBA59 /* RSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3824D26B2AEF5005DBA59 /* RSTabBarController.swift */; };
+		EDE3825826B2CE6D005DBA59 /* RSSettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE3825726B2CE6D005DBA59 /* RSSettingsVC.m */; };
+		EDE3826226B2D2A3005DBA59 /* RSStrokeColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE3826126B2D2A3005DBA59 /* RSStrokeColorVC.m */; };
+		EDE3826626B2EC4E005DBA59 /* RSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE3826526B2EC4E005DBA59 /* RSTableViewCell.m */; };
+		EDE3826A26B35DF0005DBA59 /* RSColorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE3826926B35DF0005DBA59 /* RSColorItem.m */; };
+		EDE3826F26B36767005DBA59 /* RSTableViewColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE3826E26B36767005DBA59 /* RSTableViewColorCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +56,20 @@
 		2BB9F30D26AF5FA900F43852 /* story-4-path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "story-4-path.swift"; sourceTree = "<group>"; };
 		2BB9F30F26AF5FB300F43852 /* s4-text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s4-text.txt"; sourceTree = "<group>"; };
 		2BB9F31126AF5FBE00F43852 /* s4-title.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s4-title.txt"; sourceTree = "<group>"; };
+		EDE3824526B18255005DBA59 /* RSCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSCollectionVC.swift; sourceTree = "<group>"; };
+		EDE3824A26B18558005DBA59 /* RSViewCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSViewCollectionCell.swift; sourceTree = "<group>"; };
+		EDE3824D26B2AEF5005DBA59 /* RSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTabBarController.swift; sourceTree = "<group>"; };
+		EDE3825526B2CE6D005DBA59 /* RSSchool_T9-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSSchool_T9-Bridging-Header.h"; sourceTree = "<group>"; };
+		EDE3825626B2CE6D005DBA59 /* RSSettingsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSettingsVC.h; sourceTree = "<group>"; };
+		EDE3825726B2CE6D005DBA59 /* RSSettingsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSettingsVC.m; sourceTree = "<group>"; };
+		EDE3826026B2D2A3005DBA59 /* RSStrokeColorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSStrokeColorVC.h; sourceTree = "<group>"; };
+		EDE3826126B2D2A3005DBA59 /* RSStrokeColorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSStrokeColorVC.m; sourceTree = "<group>"; };
+		EDE3826426B2EC4E005DBA59 /* RSTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSTableViewCell.h; sourceTree = "<group>"; };
+		EDE3826526B2EC4E005DBA59 /* RSTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSTableViewCell.m; sourceTree = "<group>"; };
+		EDE3826826B35DF0005DBA59 /* RSColorItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSColorItem.h; sourceTree = "<group>"; };
+		EDE3826926B35DF0005DBA59 /* RSColorItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSColorItem.m; sourceTree = "<group>"; };
+		EDE3826D26B36767005DBA59 /* RSTableViewColorCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSTableViewColorCell.h; sourceTree = "<group>"; };
+		EDE3826E26B36767005DBA59 /* RSTableViewColorCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSTableViewColorCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +105,8 @@
 				2BB9F28F26ADFAEB00F43852 /* Data */,
 				2BB9E75B26AB605700112651 /* AppDelegate.swift */,
 				2BB9E75D26AB605700112651 /* SceneDelegate.swift */,
+				EDE3827226B37384005DBA59 /* CustumViews */,
+				EDE3824826B18275005DBA59 /* ViewControllers */,
 				2BB9E76126AB605700112651 /* Main.storyboard */,
 				2BB9E76426AB605900112651 /* Assets.xcassets */,
 				2BB9E76626AB605900112651 /* LaunchScreen.storyboard */,
@@ -151,6 +175,34 @@
 			path = "story-4";
 			sourceTree = "<group>";
 		};
+		EDE3824826B18275005DBA59 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDE3824526B18255005DBA59 /* RSCollectionVC.swift */,
+				EDE3824D26B2AEF5005DBA59 /* RSTabBarController.swift */,
+				EDE3825626B2CE6D005DBA59 /* RSSettingsVC.h */,
+				EDE3825726B2CE6D005DBA59 /* RSSettingsVC.m */,
+				EDE3826026B2D2A3005DBA59 /* RSStrokeColorVC.h */,
+				EDE3826126B2D2A3005DBA59 /* RSStrokeColorVC.m */,
+				EDE3825526B2CE6D005DBA59 /* RSSchool_T9-Bridging-Header.h */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EDE3827226B37384005DBA59 /* CustumViews */ = {
+			isa = PBXGroup;
+			children = (
+				EDE3824A26B18558005DBA59 /* RSViewCollectionCell.swift */,
+				EDE3826426B2EC4E005DBA59 /* RSTableViewCell.h */,
+				EDE3826526B2EC4E005DBA59 /* RSTableViewCell.m */,
+				EDE3826D26B36767005DBA59 /* RSTableViewColorCell.h */,
+				EDE3826E26B36767005DBA59 /* RSTableViewColorCell.m */,
+				EDE3826826B35DF0005DBA59 /* RSColorItem.h */,
+				EDE3826926B35DF0005DBA59 /* RSColorItem.m */,
+			);
+			path = CustumViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,7 +236,7 @@
 				TargetAttributes = {
 					2BB9E75726AB605700112651 = {
 						CreatedOnToolsVersion = 12.5.1;
-						LastSwiftMigration = 1250;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -234,9 +286,17 @@
 			files = (
 				2BB9F30126AF557E00F43852 /* story-2-path.swift in Sources */,
 				2BB9E75C26AB605700112651 /* AppDelegate.swift in Sources */,
+				EDE3825826B2CE6D005DBA59 /* RSSettingsVC.m in Sources */,
+				EDE3824626B18255005DBA59 /* RSCollectionVC.swift in Sources */,
 				2BB9F30B26AF5EEC00F43852 /* story-3-path.swift in Sources */,
+				EDE3826A26B35DF0005DBA59 /* RSColorItem.m in Sources */,
 				2BB9F29126ADFAF100F43852 /* Data.swift in Sources */,
+				EDE3826F26B36767005DBA59 /* RSTableViewColorCell.m in Sources */,
+				EDE3824B26B18558005DBA59 /* RSViewCollectionCell.swift in Sources */,
+				EDE3824E26B2AEF6005DBA59 /* RSTabBarController.swift in Sources */,
 				2BB9F2EC26AF1F6200F43852 /* story-1-path.swift in Sources */,
+				EDE3826626B2EC4E005DBA59 /* RSTableViewCell.m in Sources */,
+				EDE3826226B2D2A3005DBA59 /* RSStrokeColorVC.m in Sources */,
 				2BB9F30E26AF5FA900F43852 /* story-4-path.swift in Sources */,
 				2BB9E75E26AB605700112651 /* SceneDelegate.swift in Sources */,
 			);
@@ -395,6 +455,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.username.RSSchool-T9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RSSchool_T9/ViewControllers/RSSchool_T9-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -416,6 +477,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.username.RSSchool-T9";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RSSchool_T9/ViewControllers/RSSchool_T9-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
