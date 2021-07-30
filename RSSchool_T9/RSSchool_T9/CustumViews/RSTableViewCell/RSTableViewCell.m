@@ -39,10 +39,10 @@
     [super setHighlighted:highlighted animated:NO];
     
     if (highlighted) {
-        self.backgroundColor = [UIColor colorWithRed:0.898 green:0.898 blue:0.918 alpha:1];
+        self.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     else {
-        self.backgroundColor = [UIColor whiteColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 }
 

@@ -14,9 +14,7 @@
 
 
 - (void)setupViews {
-//    self.selectionStyle = UITableViewCellSelectionStyleDefault;
-    
-    
+    [self setTintColor: [UIColor redColor]];
     
 }
 

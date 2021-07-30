@@ -8,7 +8,6 @@
 // Copyright © 2021 RSSchool. All rights reserved.
 
 #import "RSStrokeColorVC.h"
-#import "RSColorItem.h"
 #import "RSTableViewCell.h"
 #import "RSTableViewColorCell.h"
 
@@ -16,7 +15,7 @@
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSArray<RSColorItem*> *colorSet;
-@property (strong, nonatomic) UIColor *drawColor;
+@property (strong, nonatomic, readwrite) RSColorItem *drawColor;
 
 @end
 
@@ -33,6 +32,10 @@
 - (void)viewWillAppear:(BOOL)animated {
 //    NSLog(@"viewWillAppear");
     
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+//    [self.parentViewController targetForAction:@selector(setColorToStrokeCell:) withSender:self];
 }
 
 
@@ -56,8 +59,7 @@
     ]];
     
     // setup default drawing color
-    self.drawColor = [[UIColor alloc] initWithRed:0.953 green:0.686 blue:0.133 alpha:1];
-    NSLog(@"self.drawColor = %@", self.drawColor);
+    self.drawColor = [[RSColorItem alloc] initWithName:@"#f3af22" andColor: [[UIColor alloc] initWithRed:0.953 green:0.686 blue:0.133 alpha:1]];
 
 }
 
@@ -96,10 +98,10 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.drawColor = self.colorSet[indexPath.row].color;
+    self.drawColor = self.colorSet[indexPath.row];
     [self.navigationController popToRootViewControllerAnimated:YES];
-    NSLog(@"self.drawColor = %@", self.drawColor);
 }
+
 
 @end
 

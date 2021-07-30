@@ -14,7 +14,6 @@ class RSTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
-        print(tabBar.frame.size.height)
     }
     
     override func viewWillLayoutSubviews() {
@@ -27,13 +26,6 @@ class RSTabBarController: UITabBarController {
     func setupTabBar() {
         tabBar.backgroundColor = .white
         tabBar.tintColor = .red
-        
-        
-//
-//        let image1 = UITabBarItem()
-//        image1.image = UIImage(systemName: "star")
-//
-//        self.tabBar.setItems([image1,image1,image1], animated: false)
     }
 
 

@@ -16,15 +16,15 @@ class RSCollectionVC: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .white
         
         configureCollectionView()
 
-        
     }
     
 
     func configureCollectionView() {
+        view.backgroundColor = .white
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         
@@ -39,17 +39,17 @@ class RSCollectionVC: UIViewController, UICollectionViewDataSource, UICollection
         collection.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collection.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0.0),
-            collection.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0.0),
-            collection.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0.0),
-            collection.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0.0),
+            collection.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0.0),
+            collection.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0.0),
+            collection.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0),
+            collection.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0.0),
         ])
     }
     
     // MARK: Collection view setup delegate methods
     // frame
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2 - 8 - 20, height: 200)
+        return CGSize(width: collectionView.frame.width/2 - 28, height: 200)
     }
     // data
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -67,7 +67,7 @@ class RSCollectionVC: UIViewController, UICollectionViewDataSource, UICollection
     }
     // insets for content
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 40, left: 20, bottom: 20, right: 20)
+        return UIEdgeInsets(top: 20, left: 20, bottom: 40, right: 20)
     }
     
     

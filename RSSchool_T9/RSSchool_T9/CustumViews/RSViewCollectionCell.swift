@@ -30,16 +30,35 @@ class RSViewCollectionCell: UICollectionViewCell {
     }()
     
     
+//    // FIXME: fix gradient
+//    let imageViewGradient: UIView = {
+//        let gradient = CAGradientLayer()
+//        let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 100))
+//        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+//        gradient.frame = gradientView.frame
+//        gradient.startPoint = CGPoint.zero
+//        gradient.endPoint = CGPoint(x: 0, y: 1)
+////        gradient.delegate = self()
+//        gradientView.layer.addSublayer(gradient)
+//        return gradientView
+//    }()
+    
     // FIXME: fix gradient
-    let imageViewGradient: UIView = {
+    let gradientLayer: CAGradientLayer = {
         let gradient = CAGradientLayer()
-        let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 100))
+//        let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 100))
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        gradient.frame = gradientView.frame
+//        gradient.frame = gradientView.frame
         gradient.startPoint = CGPoint.zero
         gradient.endPoint = CGPoint(x: 0, y: 1)
 //        gradient.delegate = self()
-        gradientView.layer.addSublayer(gradient)
+//        gradientView.layer.addSublayer(gradient)
+        return gradient
+    }()
+    
+    let imageViewGradient: UIView = {
+        let gradientView = UIView()
+        gradientView.backgroundColor = .clear
         return gradientView
     }()
     
@@ -99,6 +118,7 @@ class RSViewCollectionCell: UICollectionViewCell {
         // FIXME: fix gradient
         addSubview(imageView)
         imageView.addSubview(image)
+        imageViewGradient.layer.addSublayer(gradientLayer)
         imageView.addSubview(imageViewGradient)
         imageView.addSubview(textLabel)
         imageView.addSubview(itemTypeLabel)
@@ -114,10 +134,10 @@ class RSViewCollectionCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             
-            topAnchor.constraint(equalTo: contentView.topAnchor),
-            bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -20.0),
-            trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
+//            topAnchor.constraint(equalTo: contentView.topAnchor),
+//            bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+//            leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -20.0),
+//            trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
             
             imageView.widthAnchor.constraint(equalTo: widthAnchor, constant: -16.0),
             imageView.heightAnchor.constraint(equalTo: heightAnchor, constant: -20.0),
@@ -126,7 +146,7 @@ class RSViewCollectionCell: UICollectionViewCell {
 //             FIXME: fix gradient
             imageViewGradient.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
             imageViewGradient.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
-            imageViewGradient.topAnchor.constraint(equalTo: imageView.topAnchor),
+            imageViewGradient.heightAnchor.constraint(equalToConstant: 80),
             imageViewGradient.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
 
             image.widthAnchor.constraint(equalTo: imageView.widthAnchor),
@@ -151,7 +171,7 @@ class RSViewCollectionCell: UICollectionViewCell {
     
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
-        imageViewGradient.frame = imageView.bounds
+        gradientLayer.frame = imageViewGradient.bounds
     }
     
     

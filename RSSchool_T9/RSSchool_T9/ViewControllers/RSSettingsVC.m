@@ -10,12 +10,15 @@
 #import "RSSettingsVC.h"
 #import "RSStrokeColorVC.h"
 #import "RSTableViewCell.h"
+#import "RSColorItem.h"
 
 @interface RSSettingsVC () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) RSStrokeColorVC *strokeColorVC;
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) UISwitch *switchItem;
+@property (strong, nonatomic) RSColorItem *drawColor;
+@property (strong, nonatomic) NSIndexPath *indexForCellReload;
 
 @end
 
@@ -25,13 +28,27 @@
     [super viewDidLoad];
     [self setupViews];
     self.strokeColorVC = [RSStrokeColorVC new];
+    [self.strokeColorVC loadViewIfNeeded];
     [self addChildViewController:self.strokeColorVC];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.drawColor = self.strokeColorVC.drawColor;
+    if (self.indexForCellReload != nil ) {
+//        [self.tableView reloadRowsAtIndexPaths: @[self.indexForCellReload]   withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadData];
+    }
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
 
 }
 
 
 - (void)setupViews {
-    
+    self.drawColor = self.strokeColorVC.drawColor;
     self.navigationController.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"Settings";
     self.navigationController.navigationBar.titleTextAttributes = @{
@@ -56,6 +73,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleInsetGrouped];
     [self.tableView registerClass: RSTableViewCell.class forCellReuseIdentifier:@"drawStoriesCell"];
     [self.tableView registerClass: RSTableViewCell.class forCellReuseIdentifier:@"strokeColorCell"];
+    self.tableView.scrollEnabled = false;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -93,13 +111,20 @@
     else {
         RSTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"strokeColorCell" forIndexPath:indexPath];
         cell.textLabel.text = @"Stroke color";
-        cell.detailTextLabel.textColor = [UIColor redColor];
-        cell.detailTextLabel.text = @"#color0000";
+        cell.detailTextLabel.textColor = self.drawColor.color;
+        cell.detailTextLabel.text = self.drawColor.colorName;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        self.indexForCellReload = [NSIndexPath new];
+        self.indexForCellReload = indexPath;
+        
         return cell;
     }
     
 }
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//}
     
 - (void)backButtonTapped:(id)sender {
     NSLog(@"backButtonTapped");
@@ -121,7 +146,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 1) {
         [self.navigationController pushViewController:self.strokeColorVC animated:true];
-//        [self.navigationController showViewController:self.strokeColorVC animated:true sender:self];
     }
 }
 
@@ -129,5 +153,7 @@
 //    [self viewWillLayoutSubviews];
 //    [self.tableView setRowHeight:51.0];
 //}
+
+
 
 @end

@@ -175,6 +175,33 @@
 			path = "story-4";
 			sourceTree = "<group>";
 		};
+		ED95EABA26B375CE00DDB2C6 /* RSTableViewColorCell */ = {
+			isa = PBXGroup;
+			children = (
+				EDE3826D26B36767005DBA59 /* RSTableViewColorCell.h */,
+				EDE3826E26B36767005DBA59 /* RSTableViewColorCell.m */,
+			);
+			path = RSTableViewColorCell;
+			sourceTree = "<group>";
+		};
+		ED95EABC26B375DB00DDB2C6 /* RSColorItem */ = {
+			isa = PBXGroup;
+			children = (
+				EDE3826826B35DF0005DBA59 /* RSColorItem.h */,
+				EDE3826926B35DF0005DBA59 /* RSColorItem.m */,
+			);
+			path = RSColorItem;
+			sourceTree = "<group>";
+		};
+		ED95EABF26B375E700DDB2C6 /* RSTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EDE3826426B2EC4E005DBA59 /* RSTableViewCell.h */,
+				EDE3826526B2EC4E005DBA59 /* RSTableViewCell.m */,
+			);
+			path = RSTableViewCell;
+			sourceTree = "<group>";
+		};
 		EDE3824826B18275005DBA59 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,12 +220,9 @@
 			isa = PBXGroup;
 			children = (
 				EDE3824A26B18558005DBA59 /* RSViewCollectionCell.swift */,
-				EDE3826426B2EC4E005DBA59 /* RSTableViewCell.h */,
-				EDE3826526B2EC4E005DBA59 /* RSTableViewCell.m */,
-				EDE3826D26B36767005DBA59 /* RSTableViewColorCell.h */,
-				EDE3826E26B36767005DBA59 /* RSTableViewColorCell.m */,
-				EDE3826826B35DF0005DBA59 /* RSColorItem.h */,
-				EDE3826926B35DF0005DBA59 /* RSColorItem.m */,
+				ED95EABF26B375E700DDB2C6 /* RSTableViewCell */,
+				ED95EABA26B375CE00DDB2C6 /* RSTableViewColorCell */,
+				ED95EABC26B375DB00DDB2C6 /* RSColorItem */,
 			);
 			path = CustumViews;
 			sourceTree = "<group>";
