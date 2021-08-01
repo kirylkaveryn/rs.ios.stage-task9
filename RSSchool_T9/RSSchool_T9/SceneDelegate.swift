@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         vc2.title = "two"
         
         
-        let rootController = RSTabBarController()
+        let rootController = RSTabBarVC()
         let collectionController = RSCollectionVC()
         let settingsController = UINavigationController(rootViewController: RSSettingsVC())
         rootController.setViewControllers([collectionController, settingsController], animated: false)
@@ -44,8 +44,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         items[1].image = image1
         items[1].title = "Settings"
         
-//        rootController.tabBar.setItems([UITabBarItem(title: "Image", image: image0, tag: 0),
-//                                        UITabBarItem(title: "Settings", image: image1, tag: 1)], animated: false)
         
         window = UIWindow.init(windowScene: windowScene)
         window?.rootViewController = rootController

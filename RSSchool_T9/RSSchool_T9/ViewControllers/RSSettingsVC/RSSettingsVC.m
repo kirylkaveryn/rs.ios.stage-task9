@@ -149,11 +149,5 @@
     }
 }
 
-//- (void)viewWillLayoutSubviews {
-//    [self viewWillLayoutSubviews];
-//    [self.tableView setRowHeight:51.0];
-//}
-
-
 
 @end

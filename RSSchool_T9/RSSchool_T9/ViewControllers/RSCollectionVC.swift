@@ -13,12 +13,17 @@ import UIKit
 class RSCollectionVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    let contentVC = RSContentPresentationVC()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addChild(contentVC)
         
         configureCollectionView()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        self.tabBarController?.tabBar.isHidden = false
     }
     
 
@@ -39,10 +44,10 @@ class RSCollectionVC: UIViewController, UICollectionViewDataSource, UICollection
         collection.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collection.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0.0),
-            collection.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0.0),
-            collection.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0.0),
-            collection.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0.0),
+            collection.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+            collection.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+            collection.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+            collection.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
         ])
     }
     
@@ -70,10 +75,23 @@ class RSCollectionVC: UIViewController, UICollectionViewDataSource, UICollection
         return UIEdgeInsets(top: 20, left: 20, bottom: 40, right: 20)
     }
     
+    // action for cell
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard self.children.count != 0 else {
+            print("Error")
+            return
+        }
+        
+        view.addSubview(self.contentVC.view)
+        contentVC.view.frame = view.bounds
+        contentVC.setWithData(data: FillingData.data[indexPath.item])
+        
+    }
     
+    // redraw collction cells frames when orientation changes
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-
+        collection.collectionViewLayout.invalidateLayout()
     }
 
 

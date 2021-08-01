@@ -21,38 +21,19 @@ class RSViewCollectionCell: UICollectionViewCell {
     
     let imageView: UIView = {
         let view = UIView()
-//        view.backgroundColor = .red
         view.layer.cornerRadius = 10.0
         view.layer.borderWidth = 1.0
         view.layer.borderColor = UIColor.black.cgColor
         view.layer.masksToBounds = true
         return view
     }()
-    
-    
-//    // FIXME: fix gradient
-//    let imageViewGradient: UIView = {
-//        let gradient = CAGradientLayer()
-//        let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 100))
-//        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-//        gradient.frame = gradientView.frame
-//        gradient.startPoint = CGPoint.zero
-//        gradient.endPoint = CGPoint(x: 0, y: 1)
-////        gradient.delegate = self()
-//        gradientView.layer.addSublayer(gradient)
-//        return gradientView
-//    }()
-    
-    // FIXME: fix gradient
+
     let gradientLayer: CAGradientLayer = {
         let gradient = CAGradientLayer()
-//        let gradientView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 100))
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-//        gradient.frame = gradientView.frame
         gradient.startPoint = CGPoint.zero
         gradient.endPoint = CGPoint(x: 0, y: 1)
-//        gradient.delegate = self()
-//        gradientView.layer.addSublayer(gradient)
+        gradient.locations = [0.74, 1.0]
         return gradient
     }()
     
@@ -61,7 +42,6 @@ class RSViewCollectionCell: UICollectionViewCell {
         gradientView.backgroundColor = .clear
         return gradientView
     }()
-    
     
     let textLabel: UILabel = {
         let label = UILabel()
@@ -85,12 +65,10 @@ class RSViewCollectionCell: UICollectionViewCell {
         configureView()
     }
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
     }
-    
     
     func setWithData(data: ContentType?) {
         guard let data = data else { return }
@@ -107,7 +85,6 @@ class RSViewCollectionCell: UICollectionViewCell {
         }
     }
     
-    
     func configureView() {
         
         layer.backgroundColor = UIColor.white.cgColor
@@ -115,7 +92,6 @@ class RSViewCollectionCell: UICollectionViewCell {
         layer.borderWidth = 1.0
         layer.borderColor = UIColor.black.cgColor
     
-        // FIXME: fix gradient
         addSubview(imageView)
         imageView.addSubview(image)
         imageViewGradient.layer.addSublayer(gradientLayer)
@@ -123,7 +99,7 @@ class RSViewCollectionCell: UICollectionViewCell {
         imageView.addSubview(textLabel)
         imageView.addSubview(itemTypeLabel)
         
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:))))
+//        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:))))
 
         translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -134,19 +110,14 @@ class RSViewCollectionCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             
-//            topAnchor.constraint(equalTo: contentView.topAnchor),
-//            bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-//            leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -20.0),
-//            trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0),
-            
             imageView.widthAnchor.constraint(equalTo: widthAnchor, constant: -16.0),
             imageView.heightAnchor.constraint(equalTo: heightAnchor, constant: -20.0),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-//             FIXME: fix gradient
+
             imageViewGradient.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
             imageViewGradient.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
-            imageViewGradient.heightAnchor.constraint(equalToConstant: 80),
+            imageViewGradient.topAnchor.constraint(equalTo: imageView.topAnchor),
             imageViewGradient.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
 
             image.widthAnchor.constraint(equalTo: imageView.widthAnchor),
@@ -164,10 +135,8 @@ class RSViewCollectionCell: UICollectionViewCell {
             itemTypeLabel.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -13.0),
             itemTypeLabel.heightAnchor.constraint(equalToConstant: 14.0),
         ])
-        
 
     }
-    
     
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
@@ -175,18 +144,8 @@ class RSViewCollectionCell: UICollectionViewCell {
     }
     
     
-    @objc func viewTapped(_ gestureRecognizer: UITapGestureRecognizer) {
-        print("tap: \(String(describing: textLabel.text))")
-    }
+//    @objc func viewTapped(_ gestureRecognizer: UITapGestureRecognizer) {
+//        print("tap: \(String(describing: textLabel.text))")
+//    }
 
 }
-
-
-
-//class LayerDelegate: NSObject, CALayerDelegate {
-//    func layoutSublayers(of layer: CALayer) {
-//        super.layoutSublayers(of: layer)
-//        layer.frame = autoContent.bounds
-//    }
-//
-//}
