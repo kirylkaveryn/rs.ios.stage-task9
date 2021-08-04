@@ -24,6 +24,14 @@
 		2BB9F30E26AF5FA900F43852 /* story-4-path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9F30D26AF5FA900F43852 /* story-4-path.swift */; };
 		2BB9F31026AF5FB300F43852 /* s4-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9F30F26AF5FB300F43852 /* s4-text.txt */; };
 		2BB9F31226AF5FBE00F43852 /* s4-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9F31126AF5FBE00F43852 /* s4-title.txt */; };
+		ED31E02526B74881003E5802 /* RSImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31E02426B74881003E5802 /* RSImageVC.swift */; };
+		ED31E02A26B964F2003E5802 /* RSDrawingCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31E02926B964F1003E5802 /* RSDrawingCollectionCell.swift */; };
+		ED31E03226BAC50B003E5802 /* story-5-path.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31E03126BAC50A003E5802 /* story-5-path.swift */; };
+		ED31E03826BAC587003E5802 /* s5-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED31E03626BAC586003E5802 /* s5-text.txt */; };
+		ED31E03926BAC587003E5802 /* s5-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED31E03726BAC586003E5802 /* s5-title.txt */; };
+		ED31E03D26BAC5A3003E5802 /* story-6-path.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31E03C26BAC5A3003E5802 /* story-6-path.swift */; };
+		ED31E04226BAC5C7003E5802 /* s6-title.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED31E04026BAC5C7003E5802 /* s6-title.txt */; };
+		ED31E04326BAC5C7003E5802 /* s6-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED31E04126BAC5C7003E5802 /* s6-text.txt */; };
 		ED63BC3A26B5BFBC001EA4D4 /* RSTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED63BC3926B5BFBC001EA4D4 /* RSTextLabel.swift */; };
 		ED63BC3D26B5C14B001EA4D4 /* RSCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED63BC3C26B5C14B001EA4D4 /* RSCloseButton.swift */; };
 		ED63BC4026B705CA001EA4D4 /* RSImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED63BC3F26B705CA001EA4D4 /* RSImageCollectionCell.swift */; };
@@ -61,6 +69,14 @@
 		2BB9F30D26AF5FA900F43852 /* story-4-path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "story-4-path.swift"; sourceTree = "<group>"; };
 		2BB9F30F26AF5FB300F43852 /* s4-text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s4-text.txt"; sourceTree = "<group>"; };
 		2BB9F31126AF5FBE00F43852 /* s4-title.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "s4-title.txt"; sourceTree = "<group>"; };
+		ED31E02426B74881003E5802 /* RSImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSImageVC.swift; sourceTree = "<group>"; };
+		ED31E02926B964F1003E5802 /* RSDrawingCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSDrawingCollectionCell.swift; sourceTree = "<group>"; };
+		ED31E03126BAC50A003E5802 /* story-5-path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "story-5-path.swift"; sourceTree = "<group>"; };
+		ED31E03626BAC586003E5802 /* s5-text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "s5-text.txt"; sourceTree = "<group>"; };
+		ED31E03726BAC586003E5802 /* s5-title.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "s5-title.txt"; sourceTree = "<group>"; };
+		ED31E03C26BAC5A3003E5802 /* story-6-path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "story-6-path.swift"; sourceTree = "<group>"; };
+		ED31E04026BAC5C7003E5802 /* s6-title.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "s6-title.txt"; sourceTree = "<group>"; };
+		ED31E04126BAC5C7003E5802 /* s6-text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "s6-text.txt"; sourceTree = "<group>"; };
 		ED63BC3926B5BFBC001EA4D4 /* RSTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSTextLabel.swift; sourceTree = "<group>"; };
 		ED63BC3C26B5C14B001EA4D4 /* RSCloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSCloseButton.swift; sourceTree = "<group>"; };
 		ED63BC3F26B705CA001EA4D4 /* RSImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSImageCollectionCell.swift; sourceTree = "<group>"; };
@@ -138,6 +154,8 @@
 		2BB9F29226AE017D00F43852 /* Static */ = {
 			isa = PBXGroup;
 			children = (
+				ED31E03B26BAC58E003E5802 /* story-6 */,
+				ED31E03026BAC46F003E5802 /* story-5 */,
 				2BB9F30C26AF5F9C00F43852 /* story-4 */,
 				2BB9F30326AF5D7E00F43852 /* story-3 */,
 				2BB9F2FC26AF554C00F43852 /* story-2 */,
@@ -184,6 +202,26 @@
 				2BB9F31126AF5FBE00F43852 /* s4-title.txt */,
 			);
 			path = "story-4";
+			sourceTree = "<group>";
+		};
+		ED31E03026BAC46F003E5802 /* story-5 */ = {
+			isa = PBXGroup;
+			children = (
+				ED31E03126BAC50A003E5802 /* story-5-path.swift */,
+				ED31E03626BAC586003E5802 /* s5-text.txt */,
+				ED31E03726BAC586003E5802 /* s5-title.txt */,
+			);
+			path = "story-5";
+			sourceTree = "<group>";
+		};
+		ED31E03B26BAC58E003E5802 /* story-6 */ = {
+			isa = PBXGroup;
+			children = (
+				ED31E04126BAC5C7003E5802 /* s6-text.txt */,
+				ED31E04026BAC5C7003E5802 /* s6-title.txt */,
+				ED31E03C26BAC5A3003E5802 /* story-6-path.swift */,
+			);
+			path = "story-6";
 			sourceTree = "<group>";
 		};
 		ED95EABA26B375CE00DDB2C6 /* RSTableViewColorCell */ = {
@@ -235,9 +273,10 @@
 			isa = PBXGroup;
 			children = (
 				EDE3825526B2CE6D005DBA59 /* RSSchool_T9-Bridging-Header.h */,
+				ED31E02426B74881003E5802 /* RSImageVC.swift */,
 				ED95EAC526B4956900DDB2C6 /* RSContentPresentationVC.swift */,
-				EDE3824D26B2AEF5005DBA59 /* RSTabBarVC.swift */,
 				EDE3824526B18255005DBA59 /* RSCollectionVC.swift */,
+				EDE3824D26B2AEF5005DBA59 /* RSTabBarVC.swift */,
 				ED95EAC226B48E8B00DDB2C6 /* RSSettingsVC */,
 				ED95EAC126B48E7000DDB2C6 /* RSStrokeColorVC */,
 			);
@@ -247,9 +286,10 @@
 		EDE3827226B37384005DBA59 /* CustumViews */ = {
 			isa = PBXGroup;
 			children = (
-				EDE3824A26B18558005DBA59 /* RSViewCollectionCell.swift */,
 				ED63BC4226B71F13001EA4D4 /* RSTitleImageCover.swift */,
+				EDE3824A26B18558005DBA59 /* RSViewCollectionCell.swift */,
 				ED63BC3F26B705CA001EA4D4 /* RSImageCollectionCell.swift */,
+				ED31E02926B964F1003E5802 /* RSDrawingCollectionCell.swift */,
 				ED95EACD26B5664700DDB2C6 /* RSContentView.swift */,
 				ED95EACA26B4BB3500DDB2C6 /* RSContentTypeLabel.swift */,
 				ED63BC3926B5BFBC001EA4D4 /* RSTextLabel.swift */,
@@ -323,12 +363,16 @@
 			files = (
 				2BB9E76826AB605900112651 /* LaunchScreen.storyboard in Resources */,
 				2BB9F30726AF5D9D00F43852 /* s3-text.txt in Resources */,
+				ED31E04326BAC5C7003E5802 /* s6-text.txt in Resources */,
+				ED31E03826BAC587003E5802 /* s5-text.txt in Resources */,
 				2BB9F30926AF5DAF00F43852 /* s3-title.txt in Resources */,
+				ED31E04226BAC5C7003E5802 /* s6-title.txt in Resources */,
 				2BB9F31226AF5FBE00F43852 /* s4-title.txt in Resources */,
 				2BB9F29526AE01A300F43852 /* s1-title.txt in Resources */,
 				2BB9F31026AF5FB300F43852 /* s4-text.txt in Resources */,
 				2BB9F2FE26AF556600F43852 /* s2-title.txt in Resources */,
 				2BB9E76526AB605900112651 /* Assets.xcassets in Resources */,
+				ED31E03926BAC587003E5802 /* s5-title.txt in Resources */,
 				2BB9F30226AF57B500F43852 /* s2-text.txt in Resources */,
 				2BB9F29726AE01B800F43852 /* s1-text.txt in Resources */,
 			);
@@ -346,7 +390,9 @@
 				EDE3825826B2CE6D005DBA59 /* RSSettingsVC.m in Sources */,
 				EDE3824626B18255005DBA59 /* RSCollectionVC.swift in Sources */,
 				2BB9F30B26AF5EEC00F43852 /* story-3-path.swift in Sources */,
+				ED31E03D26BAC5A3003E5802 /* story-6-path.swift in Sources */,
 				ED63BC3D26B5C14B001EA4D4 /* RSCloseButton.swift in Sources */,
+				ED31E03226BAC50B003E5802 /* story-5-path.swift in Sources */,
 				EDE3826A26B35DF0005DBA59 /* RSColorItem.m in Sources */,
 				2BB9F29126ADFAF100F43852 /* Data.swift in Sources */,
 				ED63BC3A26B5BFBC001EA4D4 /* RSTextLabel.swift in Sources */,
@@ -354,6 +400,7 @@
 				EDE3824B26B18558005DBA59 /* RSViewCollectionCell.swift in Sources */,
 				ED63BC4326B71F13001EA4D4 /* RSTitleImageCover.swift in Sources */,
 				EDE3824E26B2AEF6005DBA59 /* RSTabBarVC.swift in Sources */,
+				ED31E02526B74881003E5802 /* RSImageVC.swift in Sources */,
 				2BB9F2EC26AF1F6200F43852 /* story-1-path.swift in Sources */,
 				EDE3826626B2EC4E005DBA59 /* RSTableViewCell.m in Sources */,
 				EDE3826226B2D2A3005DBA59 /* RSStrokeColorVC.m in Sources */,
@@ -361,6 +408,7 @@
 				2BB9F30E26AF5FA900F43852 /* story-4-path.swift in Sources */,
 				ED95EACB26B4BB3500DDB2C6 /* RSContentTypeLabel.swift in Sources */,
 				2BB9E75E26AB605700112651 /* SceneDelegate.swift in Sources */,
+				ED31E02A26B964F2003E5802 /* RSDrawingCollectionCell.swift in Sources */,
 				ED95EACE26B5664700DDB2C6 /* RSContentView.swift in Sources */,
 				ED63BC4026B705CA001EA4D4 /* RSImageCollectionCell.swift in Sources */,
 			);
@@ -503,6 +551,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69YJ6ZVKYK;
 				INFOPLIST_FILE = RSSchool_T9/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -525,6 +574,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69YJ6ZVKYK;
 				INFOPLIST_FILE = RSSchool_T9/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

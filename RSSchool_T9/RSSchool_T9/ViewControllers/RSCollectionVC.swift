@@ -2,7 +2,7 @@
 // 📰 🐸 
 // Project: RSSchool_T9
 // 
-// Author: Kirill
+// Author: Kiryl Kaveryn
 // On: 28.07.21
 // 
 // Copyright © 2021 RSSchool. All rights reserved.
@@ -12,20 +12,15 @@ import UIKit
 
 class RSCollectionVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    var collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     let contentVC = RSContentPresentationVC()
+    var collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addChild(contentVC)
-        
+        contentVC.loadViewIfNeeded()
         configureCollectionView()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-//        self.tabBarController?.tabBar.isHidden = false
-    }
-    
 
     func configureCollectionView() {
         view.backgroundColor = .white
@@ -81,16 +76,15 @@ class RSCollectionVC: UIViewController, UICollectionViewDataSource, UICollection
             print("Error")
             return
         }
-        
-        view.addSubview(self.contentVC.view)
         contentVC.view.frame = view.bounds
         contentVC.setWithData(data: FillingData.data[indexPath.item])
-        
+        view.addSubview(self.contentVC.view)
     }
     
     // redraw collction cells frames when orientation changes
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        collection.invalidateIntrinsicContentSize()
         collection.collectionViewLayout.invalidateLayout()
     }
 

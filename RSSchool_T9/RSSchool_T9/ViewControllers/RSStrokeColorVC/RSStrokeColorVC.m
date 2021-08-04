@@ -2,7 +2,7 @@
 // 📰 🐸 
 // Project: RSSchool_T9
 // 
-// Author: Kirill
+// Author: Kiryl Kaveryn
 // On: 29.07.21
 // 
 // Copyright © 2021 RSSchool. All rights reserved.
@@ -25,19 +25,13 @@
     [super viewDidLoad];
     [self setupViews];
     [self setupColorSet];
-    
-//    NSLog(@"viewDidLoad");
+    [self postNotificationToSetDrawingColor];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-//    NSLog(@"viewWillAppear");
     
 }
-
-- (void)viewDidDisappear:(BOOL)animated {
-//    [self.parentViewController targetForAction:@selector(setColorToStrokeCell:) withSender:self];
-}
-
 
 - (void)setupViews {
     
@@ -51,6 +45,7 @@
     
     self.tableView.translatesAutoresizingMaskIntoConstraints = false;
     
+    // add constraints
     [NSLayoutConstraint activateConstraints: @[
         [self.tableView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
         [self.tableView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
@@ -100,24 +95,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.drawColor = self.colorSet[indexPath.row];
     [self.navigationController popToRootViewControllerAnimated:YES];
+    [self postNotificationToSetDrawingColor];
 }
 
+- (void)postNotificationToSetDrawingColor {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SetColorForDrawing" object:nil userInfo: @{@"Color": self.drawColor.color}];
+}
 
 @end
 
-
-
-//    NSDictionary *colorSet = @{
-//         @"#be2813": [UIColor colorWithRed:0.745 green:0.157 blue:0.075 alpha:1],
-//         @"#3802da": [UIColor colorWithRed:0.22 green:0.008 blue:0.855 alpha:1],
-//         @"#467c24": [UIColor colorWithRed:0.275 green:0.486 blue:0.141 alpha:1],
-//         @"#808080": [UIColor colorWithRed:0.502 green:0.502 blue:0.502 alpha:1],
-//         @"#8e5af7": [UIColor colorWithRed:0.557 green:0.353 blue:0.969 alpha:1],
-//         @"#f07f5a": [UIColor colorWithRed:0.941 green:0.498 blue:0.353 alpha:1],
-//         @"#3dacf7": [UIColor colorWithRed:0.239 green:0.675 blue:0.969 alpha:1],
-//         @"#e87aa4": [UIColor colorWithRed:0.91 green:0.478 blue:0.643 alpha:1],
-//         @"#0f2e3f": [UIColor colorWithRed:0.059 green:0.18 blue:0.247 alpha:1],
-//         @"#213711": [UIColor colorWithRed:0.129 green:0.216 blue:0.067 alpha:1],
-//         @"#511307": [UIColor colorWithRed:0.318 green:0.075 blue:0.027 alpha:1],
-//         @"#92003b": [UIColor colorWithRed:0.573 green:0.0 blue:0.231 alpha:1]
-//    };

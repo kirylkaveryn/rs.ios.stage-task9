@@ -2,7 +2,7 @@
 // 📰 🐸 
 // Project: RSSchool_T9
 // 
-// Author: Kirill
+// Author: Kiryl Kaveryn
 // On: 30.07.21
 // 
 // Copyright © 2021 RSSchool. All rights reserved.
@@ -16,7 +16,6 @@
 @property (nonatomic, strong) UIColor *color;
 
 -(instancetype)initWithName: (NSString *)name andColor: (UIColor*)color;
-
 
 @end
 

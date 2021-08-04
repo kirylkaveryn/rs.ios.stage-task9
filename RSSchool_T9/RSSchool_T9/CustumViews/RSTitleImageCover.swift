@@ -2,7 +2,7 @@
 // 📰 🐸 
 // Project: RSSchool_T9
 // 
-// Author: Kirill
+// Author: Kiryl Kaveryn
 // On: 1.08.21
 // 
 // Copyright © 2021 RSSchool. All rights reserved.
@@ -26,29 +26,24 @@ class RSTitleImageCover: UIImageView {
         return gradientView
     }()
     
-    let textLabel: RSLabelWithInsets = {
-        let label = RSLabelWithInsets()
+    let textLabel: UILabel = {
+        let label = UILabel()
         label.font = UIFont.init(name: "Rockwell-Regular", size: 48.0)
         label.textColor = .white
         label.textAlignment = .left
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-
         return label
     }()
-    
-    
-    
+
     override init(frame: CGRect) {
-        super.init(frame: .zero)
+        super.init(frame: frame)
         configureView()
     }
-
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     func configureView() {
         
@@ -59,8 +54,6 @@ class RSTitleImageCover: UIImageView {
         contentMode = .scaleAspectFill
         clipsToBounds = true
 
-
-//        addSubview(titleImageCover)
         imageViewGradient.layer.addSublayer(gradientLayer)
         addSubview(imageViewGradient)
         addSubview(textLabel)
@@ -70,7 +63,6 @@ class RSTitleImageCover: UIImageView {
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-
             imageViewGradient.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageViewGradient.trailingAnchor.constraint(equalTo: trailingAnchor),
             imageViewGradient.topAnchor.constraint(equalTo: topAnchor),
@@ -80,29 +72,20 @@ class RSTitleImageCover: UIImageView {
             textLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30.0),
             textLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -55.0),
         ])
-
     }
     
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         gradientLayer.frame = imageViewGradient.bounds
-        textLabel.invalidateIntrinsicContentSize()
+    }
+    
+    func setText(text: String) {
+        let baseText = String(text.trimmingCharacters(in: NSCharacterSet.newlines))
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.1
+        textLabel.attributedText = NSMutableAttributedString(string: baseText, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+
     }
 
 }
 
-
-class RSLabelWithInsets: UILabel {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func drawText(in rect: CGRect) {
-        let insets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
-        super.drawText(in: rect.inset(by: insets))
-    }
-}

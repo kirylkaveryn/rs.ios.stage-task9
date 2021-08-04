@@ -2,7 +2,7 @@
 // 📰 🐸 
 // Project: RSSchool_T9
 // 
-// Author: Kirill
+// Author: Kiryl Kaveryn
 // On: 31.07.21
 // 
 // Copyright © 2021 RSSchool. All rights reserved.
@@ -45,5 +45,4 @@ class RSTextLabel: RSContentTypeLabel {
             preferredMaxLayoutWidth = bounds.width - (leftInset + rightInset)
         }
     }
-
 }

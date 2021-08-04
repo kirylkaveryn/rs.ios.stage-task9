@@ -2,7 +2,7 @@
 // 📰 🐸 
 // Project: RSSchool_T9
 // 
-// Author: Kirill
+// Author: Kiryl Kaveryn
 // On: 29.07.21
 // 
 // Copyright © 2021 RSSchool. All rights reserved.
@@ -26,26 +26,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setupViews];
     self.strokeColorVC = [RSStrokeColorVC new];
     [self.strokeColorVC loadViewIfNeeded];
     [self addChildViewController:self.strokeColorVC];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     self.drawColor = self.strokeColorVC.drawColor;
     if (self.indexForCellReload != nil ) {
-//        [self.tableView reloadRowsAtIndexPaths: @[self.indexForCellReload]   withRowAnimation:UITableViewRowAnimationNone];
         [self.tableView reloadData];
     }
     
 }
-
-- (void)viewDidAppear:(BOOL)animated {
-
-}
-
 
 - (void)setupViews {
     self.drawColor = self.strokeColorVC.drawColor;
@@ -78,6 +72,7 @@
     self.tableView.delegate = self;
     
     self.switchItem = [[UISwitch alloc] initWithFrame:CGRectMake(0, 0, 51, 30)];
+    [self.switchItem setOn:true];
     [self.switchItem addTarget:self action:@selector(switchItemTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.switchItem addTarget:self action:@selector(switchItemTapped:) forControlEvents:UIControlEventTouchDragInside];
     
@@ -101,7 +96,6 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (indexPath.row == 0) {
         RSTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"drawStoriesCell" forIndexPath:indexPath];
         cell.textLabel.text = @"Draw stories";
@@ -116,15 +110,9 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         self.indexForCellReload = [NSIndexPath new];
         self.indexForCellReload = indexPath;
-        
         return cell;
     }
-    
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//}
     
 - (void)backButtonTapped:(id)sender {
     NSLog(@"backButtonTapped");
@@ -132,15 +120,13 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-
 - (void)switchItemTapped:(id)sender {
-    if ([self.switchItem isOn]) {
-        NSLog(@"swich mode is: ON");
+    if ([sender isOn]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SwitchButtonIsOn" object:nil];
     }
     else {
-        NSLog(@"swich mode is: OFF");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SwitchButtonIsOff" object:nil];
     }
-
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -148,6 +134,5 @@
         [self.navigationController pushViewController:self.strokeColorVC animated:true];
     }
 }
-
 
 @end

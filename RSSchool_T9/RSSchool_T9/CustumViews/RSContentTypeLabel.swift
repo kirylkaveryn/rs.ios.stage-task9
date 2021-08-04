@@ -2,7 +2,7 @@
 // 📰 🐸 
 // Project: RSSchool_T9
 // 
-// Author: Kirill
+// Author: Kiryl Kaveryn
 // On: 31.07.21
 // 
 // Copyright © 2021 RSSchool. All rights reserved.
@@ -10,7 +10,6 @@
 import UIKit
 
 class RSContentTypeLabel: UILabel {
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,6 +32,10 @@ class RSContentTypeLabel: UILabel {
         let insets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
         super.drawText(in: rect.inset(by: insets))
     }
+    
+    override var intrinsicContentSize: CGSize {
+        let size = super.intrinsicContentSize
+        return CGSize(width: size.width + 60, height: size.height)
+    }
 
 }
-

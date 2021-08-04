@@ -44,7 +44,11 @@ struct FillingData {
         .story(Story(coverImage: .init("story-4"), title: .from("s4-title"), text: .from("s4-text"), paths: [.story4path1, .story4path2])),
         .gallery(Gallery(coverImage: .init("code-0"), title: "Code stuff", images: .init(base: "code", count: 10))),
         .gallery(Gallery(coverImage: .init("tesla-0"), title: "Tesla", images: .init(base: "tesla", count: 8))),
-        .story(Story(coverImage: .init("story-3"), title: .from("s3-title"), text: .from("s3-text"), paths: [.story3path1, .story3path1, .story3path1, .story3path1]))
+        .story(Story(coverImage: .init("story-3"), title: .from("s3-title"), text: .from("s3-text"), paths: [.story3path1, .story3path1, .story3path1, .story3path1])),
+        .story(Story(coverImage: .init("story-5"), title: .from("s5-title"), text: .from("s5-text"), paths: [.story5path1, .story5path2, .story5path3])),
+        .gallery(Gallery(coverImage: .init("hachapuri-0"), title: "Khachapuri", images: .init(base: "hachapuri", count: 5))),
+        .gallery(Gallery(coverImage: .init("chogori-0"), title: "K2 mount (Chogori)", images: .init(base: "chogori", count: 6))),
+        .story(Story(coverImage: .init("story-6"), title: .from("s6-title"), text: .from("s6-text"), paths: [.story6path1, .story6path2, .story6path3, .story6path4]))
     ]
 }
 

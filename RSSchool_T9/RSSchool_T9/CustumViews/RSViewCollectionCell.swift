@@ -2,7 +2,7 @@
 // 📰 🐸 
 // Project: RSSchool_T9
 // 
-// Author: Kirill
+// Author: Kiryl Kaveryn
 // On: 28.07.21
 // 
 // Copyright © 2021 RSSchool. All rights reserved.
@@ -98,8 +98,6 @@ class RSViewCollectionCell: UICollectionViewCell {
         imageView.addSubview(imageViewGradient)
         imageView.addSubview(textLabel)
         imageView.addSubview(itemTypeLabel)
-        
-//        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:))))
 
         translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -142,10 +140,5 @@ class RSViewCollectionCell: UICollectionViewCell {
         super.layoutSublayers(of: layer)
         gradientLayer.frame = imageViewGradient.bounds
     }
-    
-    
-//    @objc func viewTapped(_ gestureRecognizer: UITapGestureRecognizer) {
-//        print("tap: \(String(describing: textLabel.text))")
-//    }
 
 }

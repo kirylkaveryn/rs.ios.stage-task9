@@ -2,7 +2,7 @@
 // 📰 🐸 
 // Project: RSSchool_T9
 // 
-// Author: Kirill
+// Author: Kiryl Kaveryn
 // On: 31.07.21
 // 
 // Copyright © 2021 RSSchool. All rights reserved.
@@ -11,25 +11,29 @@ import UIKit
 
 class RSCloseButton: UIButton {
     
-    let xmark = UIImageView.init(image: UIImage(systemName: "xmark"))
-
+//    let xmark = UIImageView.init(image: UIImage(systemName: "xmark"))
+    let xmark: UIImageView = {
+        let image = UIImageView.init(image: UIImage(systemName: "xmark"))
+        image.tintColor = .white
+        image .translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+        
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         let radius: CGFloat = 20
         
         self.frame = CGRect(x: 0, y: 0, width: radius * 2, height: radius * 2)
-        self.layer.cornerRadius = radius
-        self.layer.borderColor = UIColor.white.cgColor
-        self.layer.borderWidth = 1.0
-        self.clipsToBounds = true
+        layer.cornerRadius = radius
+        layer.borderColor = UIColor.white.cgColor
+        layer.borderWidth = 1.0
+        clipsToBounds = true
+
+        addSubview(xmark)
         
-        xmark.tintColor = .white
-        
-        self.addSubview(xmark)
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        xmark.translatesAutoresizingMaskIntoConstraints = false
+        translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             self.heightAnchor.constraint(equalToConstant: radius * 2),

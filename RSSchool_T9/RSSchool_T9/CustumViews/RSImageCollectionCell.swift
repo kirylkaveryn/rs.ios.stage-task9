@@ -2,7 +2,7 @@
 // 📰 🐸 
 // Project: RSSchool_T9
 // 
-// Author: Kirill
+// Author: Kiryl Kaveryn
 // On: 1.08.21
 // 
 // Copyright © 2021 RSSchool. All rights reserved.
@@ -16,19 +16,8 @@ class RSImageCollectionCell: UICollectionViewCell {
         image.layer.cornerRadius = 4.0
         image.layer.masksToBounds = true
         image.contentMode = .scaleAspectFill
-//        image.clipsToBounds = true
-        
         return image
     }()
-    
-//    let imageView: UIView = {
-//        let view = UIView()
-//        view.layer.cornerRadius = 4.0
-//        view.layer.borderWidth = 1.0
-//        view.layer.borderColor = UIColor.white.cgColor
-//        view.layer.masksToBounds = true
-//        return view
-//    }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -52,8 +41,6 @@ class RSImageCollectionCell: UICollectionViewCell {
     
         addSubview(image)
 
-//        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:))))
-
         translatesAutoresizingMaskIntoConstraints = false
         image.translatesAutoresizingMaskIntoConstraints = false
         
@@ -63,7 +50,5 @@ class RSImageCollectionCell: UICollectionViewCell {
             image.topAnchor.constraint(equalTo: topAnchor, constant: 10.0),
             image.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10.0),
         ])
-
     }
-    
 }
