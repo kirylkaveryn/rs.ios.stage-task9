@@ -55,7 +55,7 @@ class RSImageVC: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func doubleTapToDefaultZoom() {
-        scrollView.zoomScale = 1
+        scrollView.setZoomScale(1.0, animated: true)
     }
     
     func constriantsActivate() {
